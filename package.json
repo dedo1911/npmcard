@@ -1,6 +1,6 @@
 {
   "name": "dedo1911",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A personal card for Dario Emerson (@dedo1911)",
   "main": "bin/card.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "bin": {
     "dedo1911": "./bin/card.js"
-  },  
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dedo1911/npmcard.git"
@@ -20,11 +20,11 @@
   },
   "homepage": "https://github.com/dedo1911/npmcard#readme",
   "dependencies": {
-    "boxen": "^4.1.0",
-    "chalk": "^2.4.2",
-    "commander": "^3.0.1"
+    "boxen": "^4.2.0",
+    "chalk": "^4.1.0",
+    "commander": "^5.1.0"
   },
   "devDependencies": {
-    "standard": "^14.1.0"
+    "standard": "^14.3.4"
   }
 }
