@@ -16,7 +16,7 @@ let data = {
   'name': chalk.white('Dario Emerson /'),
   'handle': chalk.cyan('dedo1911'),
   'work': chalk.white('Full-stack Developer'),
-  'skills': chalk.white('NodeJS, C#, Java, Golang.. and many more!'),
+  'skills': chalk.white('NodeJS, C#, Java, Golang.. and many more! ONE LINER KING'),
   'twitter': chalk.cyan('https://twitter.com/dedo19111'),
   'github': chalk.cyan('https://github.com/dedo1911'),
   'linkedin': chalk.cyan('https://www.linkedin.com/in/dedo1911'),
