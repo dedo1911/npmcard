@@ -15,34 +15,31 @@ let options = {
 let data = {
   'name': chalk.white('Dario Emerson /'),
   'handle': chalk.cyan('dedo1911'),
-  'work': chalk.white('Full-stack Developer'),
-  'skills': chalk.white('NodeJS, C#, Java, Golang.. and many more!'),
-  'twitter': chalk.cyan('https://twitter.com/dedo19111'),
-  'github': chalk.cyan('https://github.com/dedo1911'),
-  'linkedin': chalk.cyan('https://www.linkedin.com/in/dedo1911'),
-  'web': chalk.cyan('https://dedo1911.xyz'),
+  'work': chalk.white('Co-Founder @ CloudPhoenix Srl'),
+  'workLink': chalk.cyan('cloudphoenix.it'),
+  'job': chalk.white('Full-stack Developer'),
+  'skills': chalk.white('Go, Node, React, C# and many more!'),
+  'github': chalk.cyan('github.com/dedo1911'),
+  'linkedin': chalk.cyan('linkedin.com/in/dedo1911'),
+  'web': chalk.cyan('dedo1911.xyz'),
   'npx': chalk.white('npx dedo1911'),
   'labelWork': chalk.white.bold('      Work:'),
   'labelSkills': chalk.white.bold('    Skills:'),
-  'labelTwitter': chalk.white.bold('   Twitter:'),
   'labelGitHub': chalk.white.bold('    GitHub:'),
   'labelLinkedIn': chalk.white.bold('  LinkedIn:'),
   'labelWeb': chalk.white.bold('       Web:'),
   'labelCard': chalk.white.bold('      Card:')
 }
 
-// Actual strings we're going to output
-const newline = '\n'
-const heading = `${data.name} ${data.handle}`
-const working = `${data.labelWork}  ${data.work}`
-const skills = `${data.labelSkills}  ${data.skills}`
-const twittering = `${data.labelTwitter}  ${data.twitter}`
-const githubing = `${data.labelGitHub}  ${data.github}`
-const linkedining = `${data.labelLinkedIn}  ${data.linkedin}`
-const webing = `${data.labelWeb}  ${data.web}`
-const carding = `${data.labelCard}  ${data.npx}`
-
-// Put all our output together into a single variable so we can use boxen effectively
-const output = heading + newline + newline + working + newline + skills + newline + twittering + newline + githubing + newline + linkedining + newline + webing + newline + newline + carding
+const output = `
+${data.name} ${data.handle}\n
+${data.labelWork}  ${data.work}
+             ${data.workLink}\n
+${data.labelSkills}  ${data.skills}
+${data.labelGitHub}  ${data.github}
+${data.labelLinkedIn}  ${data.linkedin}
+${data.labelWeb}  ${data.web}
+${data.labelCard}  ${data.npx}
+`
 
 console.log(chalk.green(boxen(output, options)))

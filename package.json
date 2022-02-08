@@ -1,6 +1,6 @@
 {
   "name": "dedo1911",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A personal card for Dario Emerson (@dedo1911)",
   "main": "bin/card.js",
   "scripts": {
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/dedo1911/npmcard#readme",
   "dependencies": {
+    "ansi-regex": "^6.0.1",
     "boxen": "^4.2.0",
     "chalk": "^4.1.0",
     "commander": "^5.1.0"
