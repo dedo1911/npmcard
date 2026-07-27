@@ -1,0 +1,44 @@
+name: Publish to npm
+
+# Publishes the package via npm Trusted Publishing (OIDC) — no NPM_TOKEN needed.
+# Configure the trusted publisher on npmjs.com first:
+#   package "dedo1911" -> Settings -> Trusted Publisher -> GitHub Actions
+#   Organization or user: dedo1911
+#   Repository:           npmcard
+#   Workflow filename:    publish.yml
+#   Allowed actions:      npm publish
+#
+# Release flow: bump the version in package.json, commit, then create a GitHub
+# Release whose tag matches (e.g. v2.1.0). npm publish fails if the version
+# already exists, guarding against double-publishing.
+on:
+  release:
+    types: [published]
+
+permissions:
+  id-token: write # required for OIDC trusted publishing
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24 # trusted publishing needs Node >= 22.14
+          registry-url: https://registry.npmjs.org
+
+      # Trusted publishing needs npm CLI >= 11.5.1; ensure it regardless of the
+      # version bundled with Node.
+      - run: npm install -g npm@latest
+
+      - run: npm ci
+
+      - run: npx standard
+
+      # No NODE_AUTH_TOKEN: the npm CLI detects the OIDC environment and
+      # authenticates automatically. Provenance is generated automatically for
+      # public repositories.
+      - run: npm publish
